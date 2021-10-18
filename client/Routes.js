@@ -1,9 +1,16 @@
-import React, {Component, Fragment} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import {me} from './store'
+import { me } from './store'
+
+import Cardiothoracic from './components/Cardiothoracic';
+import CardiothoracicBlock from './components/CardiothoracicBlock';
+import MyProfile from './components/MyProfile'
+import MyTestHistory from './components/MyTestHistory';
+import ReviewMaterials from './components/ReviewMaterials';
+import Probes from './components/Probes';
 
 /**
  * COMPONENT
@@ -14,22 +21,28 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn} = this.props
+    const { isLoggedIn } = this.props
 
     return (
       <div>
         {isLoggedIn ? (
           <Switch>
-            <Route path="/home" component={Home} />
+            <Route path="/home" exact component={Home} />
+            <Route path="/cardiothoracic" exact component={Cardiothoracic} />
+            <Route path="/cardiothoracic/:id" exact component={CardiothoracicBlock} />
+            <Route path="/myprofile" exact component={MyProfile} />
+            <Route path="/my-testhistory" exact component={MyTestHistory} />
+            <Route path="/review-materials" exact component={ReviewMaterials} />
+            <Route path="/probes" exact component={Probes} />
             <Redirect to="/home" />
           </Switch>
         ) : (
-          <Switch>
-            <Route path='/' exact component={ Login } />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-          </Switch>
-        )}
+            <Switch>
+              <Route path='/' exact component={Login} />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+            </Switch>
+          )}
       </div>
     )
   }
