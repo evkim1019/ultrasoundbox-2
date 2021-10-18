@@ -169,7 +169,7 @@ class CardiothoracicTorso extends Component {
           <div className={this.state.view7 === false ? "view-toggle view7-button" : "view-toggle view7-button view-toggle-selected"} onClick={this.toggleView7}></div>
           {this.state.showAltBtn === false ?
             null :
-            <div className="view-toggle viewAlt-button view-toggle-selected" onClick={this.toggleViewAlt}>View other angle</div>
+            <div className={this.state.viewAlt === false ? "view-toggle viewAlt-button" : "view-toggle viewAlt-button view-toggle-selected"} onClick={this.toggleViewAlt}>View other angle</div>
           }
         </div>
 
