@@ -6,6 +6,9 @@ const CardioBlock = db.define('cardioblock', {
   props: {
     type: Sequelize.TEXT
   },
+  usviews: {
+    type: Sequelize.ARRAY(Sequelize.TEXT)
+  },
   qtype: {
     type: Sequelize.ARRAY(Sequelize.ENUM('reading', 'general'))
   },

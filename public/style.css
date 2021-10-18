@@ -232,8 +232,72 @@ button {
 
 /*  */
 /* BLOCK */
+#block #torso-box {
+  background-color:#000;
+  width:100%;
+  display:flex;
+  margin-top: 15px;
+  justify-content: left;
+  overflow: hidden;
+}
+#torso-wrapper {
+  position:relative;
+  padding: 1em 2em;
+}
+#torso-box img {
+  display:block;
+  height: 300px;
+}
+.view-toggle {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  position: absolute;
+}
+.view-toggle-selected {
+  background-color: #c32f27;
+}
+.view1-button {
+  top:97px;
+  left: 63px;
+}
+.view2-button {
+  top:100px;
+  left: 130px;
+}
+.view3-button {
+  top:135px;
+  left: 110px;
+}
+.view4-button {
+  top:154px;
+  left: 53px;
+}
+.view5-button {
+  top:167px;
+  left: 89px;
+}
+.view6-button {
+  top:150px;
+  left: 148px;
+}
+.view7-button {
+  top:158px;
+  left: 170px;
+}
+.viewAlt-button {
+  top: 20px;
+  right:0;
+  background-color:yellow;
+}
+
+
+
 #block #question-wrapper {
   margin-bottom: 2.5em;
+  margin-top: 2em;
   display: flex;
   flex-wrap: wrap;
 }

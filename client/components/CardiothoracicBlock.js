@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 import { getCardioBlocks } from '../store/blocks'
 import { getTakes, createTake } from '../store/takes'
+import CardiothoracicTorso from './CardiothoracicTorso'
 
 
 /**
@@ -27,8 +28,8 @@ class CardiothoracicBlock extends Component {
   }
 
   async componentDidMount() {
-    await this.props.getCardioBlocks();
-    await this.props.getTakes();
+    // await this.props.getCardioBlocks();
+    // await this.props.getTakes();
 
     const thisBlock = this.props.cardiothoracic.filter(block => block.id - 1 === parseInt(this.props.match.params.id))[0]
 
@@ -139,12 +140,18 @@ class CardiothoracicBlock extends Component {
     const { data } = this.state;
     return (
       <div className="content-box" id="block">
-        <div id="scoreboard" className="hidden">
-          <p>Your score is {this.state.score}%</p>
+
+
+        {/* Prop starts */}
+        <div id="prop-box">
+          <div id="scoreboard" className="hidden">
+            <p>Your score is {this.state.score}%</p>
+          </div>
+          <p className="smallnote">Cardiothoracic / Block {this.props.match.params.id * 1 + 1}</p>
+          <p>{this.state.props}</p>
+
+          <CardiothoracicTorso thisBlockNum={parseInt(this.props.match.params.id) + 1} />
         </div>
-        <p className="smallnote">Cardiothoracic / Block {this.props.match.params.id * 1 + 1}</p>
-        <p>{this.state.props}</p>
-        <p>Torso here</p>
 
         {/* Question starts */}
         <div id="question-wrapper">
@@ -226,14 +233,14 @@ const mapState = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  // return {
-  //   getCardioBlocks: () => dispatch(getCardioBlocks()),
-  //   getTakes: () => dispatch(getTakes()),
-  //   createTake: (take) => dispatch(createTake(take)),
-  // }
-  getCardioBlocks,
-    getTakes,
-    createTake
+  return {
+    getCardioBlocks: () => dispatch(getCardioBlocks()),
+    getTakes: () => dispatch(getTakes()),
+    createTake: (take) => dispatch(createTake(take)),
+  }
+  // getCardioBlocks,
+  //   getTakes,
+  //   createTake
 }
 
 

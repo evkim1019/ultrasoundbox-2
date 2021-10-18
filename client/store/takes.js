@@ -37,7 +37,7 @@ export const createTake = (newTake) => {
   return async (dispatch) => {
     const { data: take } = await axios.post('/api/takes/create', { newTake });
     dispatch(_createTake(take));
-    history.push("/");
+    // history.push("/");
   }
 }
 

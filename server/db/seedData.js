@@ -52,6 +52,7 @@ const seedData = async () => {
     await CardioBlock.create({
       categoryId: block.categoryId,
       props: block.props,
+      usviews: block.usviews,
       qtype: qtypeList,
       questions: questionList,
       options: optionsList,

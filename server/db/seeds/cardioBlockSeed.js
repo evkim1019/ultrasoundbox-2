@@ -3,6 +3,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '47yo female came in with shortness of breath, pleuritic pain and tachycardia. She takes over the counter contraceptives. Please perform a point-of-care ECHO and obtain any needed views. You perform a POCUS:',
+    usviews: ['/cardiothoracic/block1/R-Ant-Lung_4.gif', '/cardiothoracic/block1/L-Ant-Lung_5.gif', '/cardiothoracic/block1/ECHO_Normal-EF-PSL_2.gif', 'asdf', 'asdf', 'asdf', 'asdf', '/cardiothoracic/block1/good_normal_PS.gif'],
     questionInfo: [
       {
         qtype: 'reading',
