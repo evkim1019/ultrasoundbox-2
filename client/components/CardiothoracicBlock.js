@@ -118,10 +118,10 @@ class CardiothoracicBlock extends Component {
     document.querySelector('#submit').disabled = true;
 
     // add take result to the database
-    let currentTake = { score: score, count: 1, userId: this.props.userId, cardioblockId: parseInt(this.props.match.params.id) + 1 }
+    let currentTake = { wrong: wrong, score: score, count: 1, userId: this.props.userId, cardioblockId: parseInt(this.props.match.params.id) + 1 }
     this.setState({
       score: score,
-      data: {
+      data: { 
         userId: this.state.data.userId,
         cardioblockId: this.state.data.cardioblockId,
         renalblockId: this.state.data.renalblockId,
@@ -130,7 +130,7 @@ class CardiothoracicBlock extends Component {
         wrong: wrong,
       }
     })
-    await this.props.createTake(ev)
+    await this.props.createTake(currentTake)
   }
 
   render() {
