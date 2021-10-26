@@ -42,6 +42,7 @@ class MyTestHistory extends Component {
           allTakes.filter(take => take.cardioblockId !== null)
             .map(take => take.score)
             .reduce((acc, curr) => acc += curr) / allTakes.filter(take => take.cardioblockId !== null).length
+              .toFixed(2)
           : 0
     })
     this.setState({
@@ -50,12 +51,14 @@ class MyTestHistory extends Component {
           allTakes.filter(take => take.renalblockId !== null)
             .map(take => take.score)
             .reduce((acc, curr) => acc += curr) / allTakes.filter(take => take.renalblockId !== null).length
+              .toFixed(2)
           : 0
     })
   }
 
   render() {
     // console.log('STATE CHECK', this.state)
+
     const { cardioAvg, renalAvg, efastAvg, ruqAvg } = this.state;
     const totalAvg = Math.round((cardioAvg + renalAvg + efastAvg + ruqAvg) / 4)
     return (
@@ -69,24 +72,24 @@ class MyTestHistory extends Component {
           <div className="avg-categories">
             <div>
               <p><span className="smallnote">Average score of</span><br />Cardiothoracic</p>
-              <h2>{cardioAvg}</h2>
+              <h2>{cardioAvg.toFixed(2)}</h2>
             </div>
             <div>
               <p><span className="smallnote">Average score of</span><br />Renal</p>
-              <h2>{renalAvg}</h2>
+              <h2>{renalAvg.toFixed(2)}</h2>
             </div>
             <div>
               <p><span className="smallnote">Average score of</span><br />EFAST</p>
-              <h2>{efastAvg}</h2>
+              <h2>{efastAvg.toFixed(2)}</h2>
             </div>
             <div>
               <p><span className="smallnote">Average score of</span><br />RUQ</p>
-              <h2>{ruqAvg}</h2>
+              <h2>{ruqAvg.toFixed(2)}</h2>
             </div>
           </div>
         </div>
 
-        <div className="bestworst-scored-wrapper">
+        {/* <div className="bestworst-scored-wrapper">
           <div>
             <h2>Scored Highest</h2>
             <ol>
@@ -99,7 +102,7 @@ class MyTestHistory extends Component {
               <li>here the list</li>
             </ol>
           </div>
-        </div>
+        </div> */}
 
       </div>
     )

@@ -82,9 +82,11 @@ class Home extends Component {
 
 
   render() {
+
     return (
       <div className="content-box" id="home">
         <div className="probes-list">
+          <p className="smallnote">PROTOTYPE VERSION 0.4</p><br />
           <img src="/img/probesList.png" alt="Probes Collection" />
           <p>Choose a category to pick a question block</p>
           <p className="smallnote">This is a prototype. For any bugs, typos, content errors, graphical errors or any other concerns, please email me using the contact link at the bottom.</p>
@@ -116,8 +118,11 @@ class Home extends Component {
                     <Link to={`/cardiothoracic/${idx}`}>Block {idx + 1}</Link>
                     {this.state.cardioTakes.filter(take => take.cardioblockId === block.id).length > 0 ?
                       <p className="smallnote">
-                        You took this {this.state.cardioTakes.filter(take => take.cardioblockId === block.id)[0].count} times<br />
-                        Your best score is {this.state.cardioTakes.filter(take => take.cardioblockId === block.id)[0].score}%
+                        You took this {this.state.cardioTakes.filter(take => take.cardioblockId === block.id).length} times<br />
+                        Your best score is {
+                          this.state.cardioTakes.filter(take => take.cardioblockId === block.id)
+                            .map(take => take.score).sort((a, b) => b - a)[0]
+                        }%
                       </p>
                       :
                       <p className="smallnote">

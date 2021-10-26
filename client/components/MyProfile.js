@@ -66,6 +66,7 @@ class MyProfile extends Component {
     )
     // console.log('STATE AFTER SUBMIT ', this.state)
     window.setTimeout(() => this.setState({ message: '' }), 3000)
+    window.setTimeout(() => location.reload(), 3000)
   }
 
   render() {

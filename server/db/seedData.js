@@ -20,7 +20,7 @@ const seedData = async () => {
     const user = userList[i]
     await User.create({
       username: user.username,
-      name: user.name,
+      fullName: user.fullName,
       password: user.password,
       isAdmin: user.isAdmin,
     })

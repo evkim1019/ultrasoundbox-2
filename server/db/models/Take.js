@@ -16,14 +16,14 @@ const Take = db.define('take', {
   //   }
   // },
   wrong: {
-    type: Sequelize.ARRAY(Sequelize.INTEGER)
+    type: Sequelize.ARRAY(Sequelize.JSON)
   },
   score: {
     type: Sequelize.INTEGER
   },
-  count: {
-    type: Sequelize.INTEGER
-  },
+  // count: {
+  //   type: Sequelize.INTEGER
+  // },
 })
 
 module.exports = Take

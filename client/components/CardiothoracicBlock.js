@@ -28,8 +28,8 @@ class CardiothoracicBlock extends Component {
   }
 
   async componentDidMount() {
-    // await this.props.getCardioBlocks();
-    // await this.props.getTakes();
+    await this.props.getCardioBlocks();
+    await this.props.getTakes();
 
     const thisBlock = this.props.cardiothoracic.filter(block => block.id - 1 === parseInt(this.props.match.params.id))[0]
 
@@ -118,10 +118,9 @@ class CardiothoracicBlock extends Component {
     document.querySelector('#submit').disabled = true;
 
     // add take result to the database
-    let currentTake = { wrong: wrong, score: score, count: 1, userId: this.props.userId, cardioblockId: parseInt(this.props.match.params.id) + 1 }
     this.setState({
       score: score,
-      data: { 
+      data: {
         userId: this.state.data.userId,
         cardioblockId: this.state.data.cardioblockId,
         renalblockId: this.state.data.renalblockId,
@@ -130,11 +129,14 @@ class CardiothoracicBlock extends Component {
         wrong: wrong,
       }
     })
+
+    let currentTake = { score: score, wrong: wrong, count: 1, userId: this.props.userId, cardioblockId: parseInt(this.props.match.params.id) + 1 }
     await this.props.createTake(currentTake)
   }
 
+
   render() {
-    console.log('PROPS & STATE ====> ', this.props, this.state)
+    // console.log('PROPS & STATE ====> ', this.props, this.state)
     const questionOptionsSet = this.state.questionOptionsSet;
 
     const { data } = this.state;
@@ -209,8 +211,16 @@ class CardiothoracicBlock extends Component {
         {/* Float button */}
         <div className="float-right-bottom">
           <div>
-            <Link to={`/cardiothoracic/${this.props.match.params.id * 1 + 1}`}>Next Block</Link>
+            {this.props.cardiothoracic.map(block => block.id).includes(this.props.match.params.id * 1 + 2) ?
+              <a onClick={() => { window.location.href = `/cardiothoracic/${this.props.match.params.id * 1 + 1}` }}>Next Block</a>
+              :
+              <a className="lastBlock">Last Block</a>
+            }
           </div>
+        </div>
+        {/* Float breadcrumb */}
+        <div className="float-right-top">
+          <p className="smallnote">Cardiothoracic / Block {this.props.match.params.id * 1 + 1}</p>
         </div>
       </div >
     )

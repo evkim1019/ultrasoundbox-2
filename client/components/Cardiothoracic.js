@@ -43,7 +43,7 @@ class Cardiothoracic extends Component {
       <div className="content-box" id="home">
         <div className="content-headline">
           <h1>Cardiothoracic</h1>
-          <p>A cardiothoracic surgeon is a specialist who operates on the heart, lungs and other thoracic (chest) organs. As well as performing surgery, they also diagnose and treat diseases of these organs.</p>
+          <p className="smallnote"><br />A cardiothoracic surgeon is a specialist who operates on the heart, lungs and other thoracic (chest) organs. As well as performing surgery, they also diagnose and treat diseases of these organs.</p>
         </div>
 
         <div className="toggle-content-wrapper">
@@ -53,8 +53,11 @@ class Cardiothoracic extends Component {
                 <Link to={`/cardiothoracic/${idx}`}>Block {idx + 1}</Link>
                 {this.state.cardioTakes.filter(take => take.cardioblockId === block.id).length > 0 ?
                   <p className="smallnote">
-                    You took this {this.state.cardioTakes.filter(take => take.cardioblockId === block.id)[0].count} times<br />
-                  Your best score is {this.state.cardioTakes.filter(take => take.cardioblockId === block.id)[0].score}%
+                    You took this {this.state.cardioTakes.filter(take => take.cardioblockId === block.id).length} times<br />
+                  Your best score is {
+                      this.state.cardioTakes.filter(take => take.cardioblockId === block.id)
+                        .map(take => take.score).sort((a, b) => b - a)[0]
+                    }%
                 </p>
                   :
                   <p className="smallnote">

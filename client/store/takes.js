@@ -18,12 +18,12 @@ const _createTake = (take) => {
     take
   }
 }
-// const _updateTake = (take) => {
-//   return {
-//     type: UPDATE_TAKE,
-//     take
-//   }
-// }
+const _updateTake = (take) => {
+  return {
+    type: UPDATE_TAKE,
+    take
+  }
+}
 
 // THUNK CREATORS
 export const getTakes = () => {
@@ -37,6 +37,14 @@ export const createTake = (newTake) => {
   return async (dispatch) => {
     const { data: take } = await axios.post('/api/takes/create', { newTake });
     dispatch(_createTake(take));
+    // history.push("/");
+  }
+}
+
+export const updateTake = (newTake) => {
+  return async (dispatch) => {
+    const { data: take } = await axios.put('/api/takes', { newTake });
+    dispatch(_updateTake(take));
     // history.push("/");
   }
 }
