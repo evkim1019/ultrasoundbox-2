@@ -11,6 +11,7 @@ import MyProfile from './components/MyProfile'
 import MyTestHistory from './components/MyTestHistory';
 import ReviewMaterials from './components/ReviewMaterials';
 import Probes from './components/Probes';
+import ForgotPW from './components/ForgotPW';
 
 /**
  * COMPONENT
@@ -40,6 +41,7 @@ class Routes extends Component {
             <Switch>
               <Route path='/' exact component={Login} />
               <Route path="/login" component={Login} />
+              <Route path="/forgot-pw" component={ForgotPW} />
               <Route path="/signup" component={Signup} />
             </Switch>
           )}

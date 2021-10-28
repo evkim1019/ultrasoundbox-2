@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { authenticate } from '../store'
+import { Link } from 'react-router-dom'
 
 /**
  * COMPONENT
@@ -22,6 +23,7 @@ const AuthForm = props => {
           </div>
           <div>
             <button className="button" type="submit">{displayName}</button>
+            <br /><br /><Link className="smallnote" to="/forgot-pw">Forgot password?</Link>
           </div>
           {error && error.response && <div> {error.response.data} </div>}
         </form>
