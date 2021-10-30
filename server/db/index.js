@@ -24,6 +24,10 @@ Take.belongsTo(CardioBlock);
 CardioBlock.hasMany(Take);
 Take.belongsTo(RenalBlock);
 RenalBlock.hasMany(Take);
+Take.belongsTo(EfastBlock);
+EfastBlock.hasMany(Take);
+Take.belongsTo(RuqBlock);
+RuqBlock.hasMany(Take);
 Take.belongsTo(User);
 User.hasMany(Take);
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 // import { forEach } from '../../server/db/seeds/ruqBlockSeed';
 
-import { getCardioBlocks } from '../store/blocks'
+import { getRuqBlocks } from '../store/blocks'
 import { getTakes, createTake } from '../store/takes'
 import CardiothoracicTorso from './CardiothoracicTorso'
 
@@ -11,7 +11,7 @@ import CardiothoracicTorso from './CardiothoracicTorso'
 /**
  * COMPONENT
  */
-class CardiothoracicBlock extends Component {
+class RuqBlock extends Component {
   constructor(props) {
     super(props);
 
@@ -28,10 +28,10 @@ class CardiothoracicBlock extends Component {
   }
 
   async componentDidMount() {
-    await this.props.getCardioBlocks();
+    await this.props.getRuqBlocks();
     await this.props.getTakes();
 
-    const thisBlock = this.props.cardiothoracic.filter(block => block.id - 1 === parseInt(this.props.match.params.id))[0]
+    const thisBlock = this.props.ruq.filter(block => block.id - 1 === parseInt(this.props.match.params.id))[0]
 
     const optionsToArray = [];
     const questionOptionsSet = []
@@ -45,7 +45,7 @@ class CardiothoracicBlock extends Component {
     }
 
     this.setState({
-      category: 'Cardiothoracic',
+      category: 'Ruq',
       props: thisBlock.props,
       qtype: thisBlock.qtype,
       questionList: thisBlock.questions,
@@ -55,11 +55,11 @@ class CardiothoracicBlock extends Component {
       questionOptionsSet: questionOptionsSet,
       data: {
         userId: this.props.userId,
-        cardioblockId: parseInt(this.props.match.params.id) + 1,
+        cardioblockId: null,
         renalblockId: null,
         efastblockId: null,
-        ruqblockId: null,
-        count: this.props.currentUserTakes.filter(take => take.cardioblockId === parseInt(this.props.match.params.id) + 1).length,
+        ruqblockId: parseInt(this.props.match.params.id) + 1,
+        count: this.props.currentUserTakes.filter(take => take.ruqblockId === parseInt(this.props.match.params.id) + 1).length,
         score: 0,
         wrong: []
       },
@@ -126,13 +126,15 @@ class CardiothoracicBlock extends Component {
         userId: this.state.data.userId,
         cardioblockId: this.state.data.cardioblockId,
         renalblockId: this.state.data.renalblockId,
+        efastblockId: this.state.data.efastblockId,
+        ruqblockId: this.state.data.ruqblockId,
         score: score,
         count: this.state.data.count + 1,
         wrong: wrong,
       }
     })
 
-    let currentTake = { score: score, wrong: wrong, count: 1, userId: this.props.userId, cardioblockId: parseInt(this.props.match.params.id) + 1 }
+    let currentTake = { score: score, wrong: wrong, count: 1, userId: this.props.userId, ruqblockId: parseInt(this.props.match.params.id) + 1 }
     await this.props.createTake(currentTake)
   }
 
@@ -151,7 +153,7 @@ class CardiothoracicBlock extends Component {
           <div id="scoreboard" className="hidden">
             <p>Your score is {this.state.score}%</p>
           </div>
-          <p className="smallnote">Cardiothoracic / Block {this.props.match.params.id * 1 + 1}</p>
+          <p className="smallnote">RUQ / Block {this.props.match.params.id * 1 + 1}</p>
           <p>{this.state.props}</p>
 
           <CardiothoracicTorso thisBlockNum={parseInt(this.props.match.params.id) + 1} />
@@ -213,8 +215,8 @@ class CardiothoracicBlock extends Component {
         {/* Float button */}
         <div className="float-right-bottom">
           <div>
-            {this.props.cardiothoracic.map(block => block.id).includes(this.props.match.params.id * 1 + 2) ?
-              <a onClick={() => { window.location.href = `/cardiothoracic/${this.props.match.params.id * 1 + 1}` }}>Next Block</a>
+            {this.props.ruq.map(block => block.id).includes(this.props.match.params.id * 1 + 2) ?
+              <a onClick={() => { window.location.href = `/ruq/${this.props.match.params.id * 1 + 1}` }}>Next Block</a>
               :
               <a className="lastBlock">Last Block</a>
             }
@@ -222,7 +224,7 @@ class CardiothoracicBlock extends Component {
         </div>
         {/* Float breadcrumb */}
         <div className="float-right-top">
-          <p className="smallnote">Cardiothoracic / Block {this.props.match.params.id * 1 + 1}</p>
+          <p className="smallnote">RUQ / Block {this.props.match.params.id * 1 + 1}</p>
         </div>
       </div >
     )
@@ -238,7 +240,7 @@ const mapState = state => {
   return {
     userId: state.auth.id,
     username: state.auth.username,
-    cardiothoracic: state.cardiothoracic,
+    ruq: state.ruq,
     currentUserTakes: state.takes,
     newTake: ''
   }
@@ -246,7 +248,7 @@ const mapState = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getCardioBlocks: () => dispatch(getCardioBlocks()),
+    getRuqBlocks: () => dispatch(getRuqBlocks()),
     getTakes: () => dispatch(getTakes()),
     createTake: (take) => dispatch(createTake(take)),
   }
@@ -256,4 +258,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapState, mapDispatchToProps)(CardiothoracicBlock)
+export default connect(mapState, mapDispatchToProps)(RuqBlock)

@@ -35,6 +35,8 @@ class MyTestHistory extends Component {
     this.setState({ takes: allTakes })
     this.setState({ cardioTakes: allTakes.filter(take => take.cardioblockId !== null) })
     this.setState({ renalTakes: allTakes.filter(take => take.renalblockId !== null) })
+    this.setState({ efastTakes: allTakes.filter(take => take.efastblockId !== null) })
+    this.setState({ ruqTakes: allTakes.filter(take => take.ruqblockId !== null) })
 
     this.setState({
       cardioAvg:
@@ -51,6 +53,24 @@ class MyTestHistory extends Component {
           allTakes.filter(take => take.renalblockId !== null)
             .map(take => take.score)
             .reduce((acc, curr) => acc += curr) / allTakes.filter(take => take.renalblockId !== null).length
+              .toFixed(2)
+          : 0
+    })
+    this.setState({
+      efastAvg:
+        allTakes.filter(take => take.efastblockId !== null).length > 0 ?
+          allTakes.filter(take => take.efastblockId !== null)
+            .map(take => take.score)
+            .reduce((acc, curr) => acc += curr) / allTakes.filter(take => take.efastblockId !== null).length
+              .toFixed(2)
+          : 0
+    })
+    this.setState({
+      ruqAvg:
+        allTakes.filter(take => take.ruqblockId !== null).length > 0 ?
+          allTakes.filter(take => take.ruqblockId !== null)
+            .map(take => take.score)
+            .reduce((acc, curr) => acc += curr) / allTakes.filter(take => take.ruqblockId !== null).length
               .toFixed(2)
           : 0
     })
@@ -72,19 +92,19 @@ class MyTestHistory extends Component {
           <div className="avg-categories">
             <div>
               <p><span className="smallnote">Average score of</span><br />Cardiothoracic</p>
-              <h2>{cardioAvg.toFixed(2)}</h2>
+              <h2>{cardioAvg.toFixed(2)}%</h2>
             </div>
             <div>
               <p><span className="smallnote">Average score of</span><br />Renal</p>
-              <h2>{renalAvg.toFixed(2)}</h2>
+              <h2>{renalAvg.toFixed(2)}%</h2>
             </div>
             <div>
               <p><span className="smallnote">Average score of</span><br />EFAST</p>
-              <h2>{efastAvg.toFixed(2)}</h2>
+              <h2>{efastAvg.toFixed(2)}%</h2>
             </div>
             <div>
               <p><span className="smallnote">Average score of</span><br />RUQ</p>
-              <h2>{ruqAvg.toFixed(2)}</h2>
+              <h2>{ruqAvg.toFixed(2)}%</h2>
             </div>
           </div>
         </div>

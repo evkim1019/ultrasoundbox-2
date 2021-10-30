@@ -40,6 +40,8 @@ class Home extends Component {
     this.setState({ takes: allTakes })
     this.setState({ cardioTakes: allTakes.filter(take => take.cardioblockId !== null) })
     this.setState({ renalTakes: allTakes.filter(take => take.renalblockId !== null) })
+    this.setState({ efastTakes: allTakes.filter(take => take.efastblockId !== null) })
+    this.setState({ ruqTakes: allTakes.filter(take => take.ruqblockId !== null) })
   }
 
   showBlock1(ev) {
@@ -143,7 +145,24 @@ class Home extends Component {
               <div>
                 {this.props.renal.map((block, idx) =>
                   <div key={idx}>
-                    <p>Block {idx + 1}</p>
+                    <Link to={`/renal/${idx}`}>Block {idx + 1}</Link>
+                    {this.state.renalTakes.filter(take => take.renalblockId === block.id).length > 0 ?
+                      <p className="smallnote">
+                        You took this {this.state.renalTakes.filter(take => take.renalblockId === block.id).length} times<br />
+                        Your best score is {
+                          this.state.renalTakes.filter(take => take.renalblockId === block.id)
+                            .map(take => take.score).sort((a, b) => b - a)[0]
+                        }%
+                      </p>
+                      :
+                      <p className="smallnote">
+                        You haven't took this block
+                        No best score yet
+                      </p>
+                    }
+                    <br /><br />
+                    <Link to={`/renal/${idx}`} className="button">Take test</Link>
+                    <br /><br />
                   </div>
                 )}
               </div>
@@ -154,7 +173,24 @@ class Home extends Component {
               <div>
                 {this.props.efast.map((block, idx) =>
                   <div key={idx}>
-                    <p>Block {idx + 1}</p>
+                    <Link to={`/efast/${idx}`}>Block {idx + 1}</Link>
+                    {this.state.efastTakes.filter(take => take.efastblockId === block.id).length > 0 ?
+                      <p className="smallnote">
+                        You took this {this.state.efastTakes.filter(take => take.efastblockId === block.id).length} times<br />
+                        Your best score is {
+                          this.state.efastTakes.filter(take => take.efastblockId === block.id)
+                            .map(take => take.score).sort((a, b) => b - a)[0]
+                        }%
+                      </p>
+                      :
+                      <p className="smallnote">
+                        You haven't took this block
+                        No best score yet
+                      </p>
+                    }
+                    <br /><br />
+                    <Link to={`/efast/${idx}`} className="button">Take test</Link>
+                    <br /><br />
                   </div>
                 )}
               </div>
@@ -165,7 +201,24 @@ class Home extends Component {
               <div>
                 {this.props.ruq.map((block, idx) =>
                   <div key={idx}>
-                    <p>Block {idx + 1}</p>
+                    <Link to={`/ruq/${idx}`}>Block {idx + 1}</Link>
+                    {this.state.ruqTakes.filter(take => take.ruqblockId === block.id).length > 0 ?
+                      <p className="smallnote">
+                        You took this {this.state.ruqTakes.filter(take => take.ruqblockId === block.id).length} times<br />
+                        Your best score is {
+                          this.state.ruqTakes.filter(take => take.ruqblockId === block.id)
+                            .map(take => take.score).sort((a, b) => b - a)[0]
+                        }%
+                      </p>
+                      :
+                      <p className="smallnote">
+                        You haven't took this block
+                        No best score yet
+                      </p>
+                    }
+                    <br /><br />
+                    <Link to={`/ruq/${idx}`} className="button">Take test</Link>
+                    <br /><br />
                   </div>
                 )}
               </div>

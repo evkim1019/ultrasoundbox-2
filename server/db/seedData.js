@@ -87,6 +87,58 @@ const seedData = async () => {
     })
   }
 
+  // Efast
+  for (let i = 0; i < efastBlockList.length; i++) {
+    const block = efastBlockList[i];
+    let qtypeList = []
+    let questionList = []
+    let optionsList = []
+    let answerList = []
+    let explainList = []
+    for (let j = 0; j < block.questionInfo.length; j++) {
+      await qtypeList.push(efastBlockList[i].questionInfo[j].qtype)
+      await questionList.push(efastBlockList[i].questionInfo[j].question)
+      await optionsList.push(efastBlockList[i].questionInfo[j].options)
+      await answerList.push(efastBlockList[i].questionInfo[j].answer)
+      await explainList.push(efastBlockList[i].questionInfo[j].explain)
+    }
+    await EfastBlock.create({
+      categoryId: block.categoryId,
+      props: block.props,
+      qtype: qtypeList,
+      questions: questionList,
+      options: optionsList,
+      answers: answerList,
+      explain: explainList
+    })
+  }
+
+  // ruq
+  for (let i = 0; i < ruqBlockList.length; i++) {
+    const block = ruqBlockList[i];
+    let qtypeList = []
+    let questionList = []
+    let optionsList = []
+    let answerList = []
+    let explainList = []
+    for (let j = 0; j < block.questionInfo.length; j++) {
+      await qtypeList.push(ruqBlockList[i].questionInfo[j].qtype)
+      await questionList.push(ruqBlockList[i].questionInfo[j].question)
+      await optionsList.push(ruqBlockList[i].questionInfo[j].options)
+      await answerList.push(ruqBlockList[i].questionInfo[j].answer)
+      await explainList.push(ruqBlockList[i].questionInfo[j].explain)
+    }
+    await RuqBlock.create({
+      categoryId: block.categoryId,
+      props: block.props,
+      qtype: qtypeList,
+      questions: questionList,
+      options: optionsList,
+      answers: answerList,
+      explain: explainList
+    })
+  }
+
 
   // Take
   for (let i = 0; i < takeList.length; i++) {
@@ -99,6 +151,8 @@ const seedData = async () => {
       count: take.count,
       cardioblockId: take.cardioblockId,
       renalblockId: take.renalblockId,
+      efastblockId: take.efastblockId,
+      ruqblockId: take.ruqblockId,
       userId: take.userId,
     })
   }

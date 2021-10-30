@@ -7,6 +7,9 @@ import { me } from './store'
 
 import Cardiothoracic from './components/Cardiothoracic';
 import CardiothoracicBlock from './components/CardiothoracicBlock';
+import RenalBlock from './components/RenalBlock';
+import EfastBlock from './components/EfastBlock';
+import RuqBlock from './components/RuqBlock';
 import MyProfile from './components/MyProfile'
 import MyTestHistory from './components/MyTestHistory';
 import ReviewMaterials from './components/ReviewMaterials';
@@ -31,6 +34,11 @@ class Routes extends Component {
             <Route path="/home" exact component={Home} />
             <Route path="/cardiothoracic" exact component={Cardiothoracic} />
             <Route path="/cardiothoracic/:id" exact component={CardiothoracicBlock} />
+            {/* <Route path="/renal" exact component={Renal} /> */}
+            <Route path="/renal/:id" exact component={RenalBlock} />
+            <Route path="/efast/:id" exact component={EfastBlock} />
+            <Route path="/ruq/:id" exact component={RuqBlock} />
+
             <Route path="/myprofile" exact component={MyProfile} />
             <Route path="/my-testhistory" exact component={MyTestHistory} />
             <Route path="/review-materials" exact component={ReviewMaterials} />
