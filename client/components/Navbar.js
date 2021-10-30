@@ -15,9 +15,6 @@ class Navbar extends Component {
 
     this.burgerToggle = this.burgerToggle.bind(this);
     this.closeToggle = this.closeToggle.bind(this);
-    // this.dropdownAccount = this.dropdownAccount.bind(this);
-    // this.dropdownBlocks = this.dropdownBlocks.bind(this);
-    // this.closeDropdown = this.closeDropdown.bind(this);
   }
 
   burgerToggle(ev) {
@@ -31,28 +28,6 @@ class Navbar extends Component {
       document.removeEventListener('click', this.closeToggle);
     })
   }
-
-  // dropdownBlocks(ev) {
-  //   ev.preventDefault();
-  //   document.getElementById('nav-chooseblocks').style.fontWeight = '800';
-  //   this.setState({ dropdownBlocks: !this.state.dropdownBlocks, dropdownAccount: false }, () => {
-  //     document.addEventListener('click', this.closeDropdown);
-  //   })
-  // }
-  // dropdownAccount(ev) {
-  //   ev.preventDefault();
-  //   document.getElementById('nav-account').style.fontWeight = '800';
-  //   this.setState({ dropdownAccount: !this.state.dropdownAccount, dropdownBlocks: false }, () => {
-  //     document.addEventListener('click', this.closeDropdown);
-  //   })
-  // }
-  // closeDropdown() {
-  //   document.getElementById('nav-account').style.fontWeight = '500';
-  //   document.getElementById('nav-chooseblocks').style.fontWeight = '500';
-  //   this.setState({ dropdownAccount: false, dropdownBlocks: false }, () => {
-  //     document.removeEventListener('click', this.closeDropdown);
-  //   })
-  // }
 
   render() {
     const { handleClick, isLoggedIn, fullName } = this.props;
@@ -82,9 +57,9 @@ class Navbar extends Component {
         <div id="menuPanel" className={this.state.burgerToggleOpen ? 'showMenuPanel' : ''}>
           <div>
             <Link to="/cardiothoracic">Cardiothoracic</Link>
-            <a href="">Renal</a>
-            <a href="">EFAST</a>
-            <a href="">RUQ</a>
+            <Link to="/renal">Renal</Link>
+            <Link to="/efast">EFAST</Link>
+            <Link to="/ruq">RUQ</Link>
           </div>
 
           {isLoggedIn ?

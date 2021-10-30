@@ -7,8 +7,11 @@ import { me } from './store'
 
 import Cardiothoracic from './components/Cardiothoracic';
 import CardiothoracicBlock from './components/CardiothoracicBlock';
+import Renal from './components/Renal';
 import RenalBlock from './components/RenalBlock';
+import Efast from './components/Efast';
 import EfastBlock from './components/EfastBlock';
+import Ruq from './components/Ruq';
 import RuqBlock from './components/RuqBlock';
 import MyProfile from './components/MyProfile'
 import MyTestHistory from './components/MyTestHistory';
@@ -34,9 +37,11 @@ class Routes extends Component {
             <Route path="/home" exact component={Home} />
             <Route path="/cardiothoracic" exact component={Cardiothoracic} />
             <Route path="/cardiothoracic/:id" exact component={CardiothoracicBlock} />
-            {/* <Route path="/renal" exact component={Renal} /> */}
+            <Route path="/renal" exact component={Renal} />
             <Route path="/renal/:id" exact component={RenalBlock} />
+            <Route path="/efast" exact component={Efast} />
             <Route path="/efast/:id" exact component={EfastBlock} />
+            <Route path="/ruq" exact component={Ruq} />
             <Route path="/ruq/:id" exact component={RuqBlock} />
 
             <Route path="/myprofile" exact component={MyProfile} />
