@@ -84,7 +84,7 @@ class Home extends Component {
 
 
   render() {
-
+    console.log('USER CHECK ===> ', this.props)
     return (
       <div className="content-box" id="home">
         <div className="probes-list">
@@ -238,8 +238,9 @@ const mapState = state => {
   // console.log('MAPSTATE', state)
   return {
     userid: state.auth.id,
+    isAdmin: state.auth.isAdmin,
     username: state.auth.username,
-    name: state.auth.name,
+    fullName: state.auth.fullName,
     cardiothoracic: state.cardiothoracic,
     renal: state.renal,
     efast: state.efast,
