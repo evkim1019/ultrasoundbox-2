@@ -30,9 +30,11 @@ class ForgotPW extends Component {
     console.log(this.state)
     return (
       <div className="content-box" id="forgotPW">
-        <h1>Forgot your password?</h1>
+        {/* <h1>Forgot your password?</h1> */}
         <div className="">
-          <form onSubmit={this.handleSubmit}>
+          <p>Please contact us with your full name and email address</p><br />
+          <a href="mailto:ultrasoundbox.official@gmail.com">ultrasoundbox.official@gmail.com</a>
+          {/* <form onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="email">Email Address</label>
               <input name="email" type="text" onChange={e => this.state.userEmail = e.target.value} />
@@ -41,7 +43,7 @@ class ForgotPW extends Component {
             <div>
               <button className="button" type="submit">Find password</button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     )

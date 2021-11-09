@@ -151,8 +151,7 @@ class CardiothoracicTorso extends Component {
     }
   }
 
-  render() {
-    console.log('TORSO PROPS ?????? ', this.props)
+  render() { 
 
     const thisTorso = this.props.cardiothoracic.filter(qGroup => qGroup.id === this.props.thisBlockNum)[0]
     console.log('thisTorsothisTorsothisTorso', thisTorso)
@@ -189,10 +188,26 @@ class CardiothoracicTorso extends Component {
               <img src={thisTorso.usviews[2]} />
             }
           </div>
-          <div className="view-screen view4"></div>
-          <div className="view-screen view5"></div>
-          <div className="view-screen view6"></div>
-          <div className="view-screen view7"></div>
+          <div className="view-screen view4">
+            {this.state.view4 === false ? null :
+              <img src={thisTorso.usviews[3]} />
+            }
+          </div>
+          <div className="view-screen view5">
+            {this.state.view5 === false ? null :
+              <img src={thisTorso.usviews[4]} />
+            }
+          </div>
+          <div className="view-screen view6">
+            {this.state.view6 === false ? null :
+              <img src={thisTorso.usviews[5]} />
+            }
+          </div>
+          <div className="view-screen view7">
+            {this.state.view7 === false ? null :
+              <img src={thisTorso.usviews[6]} />
+            }
+          </div>
           <div className="view-screen viewAlt">
             {this.state.viewAlt === false ? null :
               <img src={thisTorso.usviews[7]} />

@@ -8,7 +8,7 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   margin:0;
   padding:0;
-  color: #004e98;
+  color: #006dc6;
   box-sizing: border-box;
   border-collapse: collapse;
 }
@@ -84,7 +84,7 @@ form div {
   position: absolute;
   height: 2px;
   width: 100%;
-  background: #004e98;
+  background: #006dc6;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -143,7 +143,7 @@ form div {
   position: fixed;
   top: 54px;
   left: -200px;
-  background: #004e98;
+  background: #006dc6;
   height:calc(100vh - 55px);
   width: 200px!important;
   padding:2em 0;
@@ -194,7 +194,7 @@ input[type="radio"] + label:before {
 }
 input[type="radio"]:checked + label:before {
   content: "\f192";
-  color: #004e98;
+  color: #006dc6;
 }
 #block .incorrect .correct-answer input[type="radio"] + label:before, .correct input[type="radio"]:checked + label:before {
  content: "\f058";
@@ -240,24 +240,24 @@ button {
   color: inherit;
 }
 .button.active {
-  background-color: #004e98;
+  background-color: #006dc6;
   color: #fff;
 }
 .button.active:hover {
-  background-color: #004e98;
+  background-color: #006dc6;
   color: #fff;
 }
 .button {
   padding: 0.7em 2em;
   border-radius: 100px;
-  border: 1px solid #004e98;
+  border: 1px solid #006dc6;
   background-color: #eef4fb;
-  color: #004e98;
+  color: #006dc6;
   cursor: pointer;
 }
 .button:hover {
   background-color: #ddeafa;
-  color: #004e98;
+  color: #006dc6;
 }
 .button:disabled {
   cursor: default;
@@ -273,7 +273,7 @@ button {
 
 .float-right-bottom a {
   color: #fff;
-  background-color: #004e98;
+  background-color: #006dc6;
   padding: 1em 1.5em;
   border-radius: 100px;
   font-size: 14px;
@@ -303,7 +303,7 @@ button {
 /* NAV */
 #navbar {
   background-color: #fff4f4;
-  border-bottom: 1px solid #004e98;
+  border-bottom: 1px solid #006dc6;
   position: fixed;
   top: 0;
   padding: 1em 2em;
@@ -351,6 +351,9 @@ button {
 /* LOGIN AND SIGNIN */
 #loginsignup label{
   font-size: 12px;
+}
+#forgotPW {
+  text-align:center;
 }
 
 
@@ -468,7 +471,7 @@ button {
   top: 36%;
   left: 68%;
   opacity:1!important;
-  background-color:#004e98;
+  background-color:#006dc6;
   color: #fff;
   width: fit-content!important;
   border-radius: 0!important;
@@ -540,7 +543,7 @@ button {
 }
 #block input[type="radio"]:checked + label {
   background-color: #eef4fb;
-  border-color: #004e98;
+  border-color: #006dc6;
 }
 
 .incorrect .correct-answer label {
@@ -675,7 +678,7 @@ button {
   border: 1px solid #ddd;
 }
 .Review-materials-block:hover {
-  border: 1px solid #004e98;
+  border: 1px solid #006dc6;
 }
 .r-m-1-txt, .r-m-2-txt, .r-m-3-txt, .r-m-4-txt, .r-m-5-txt {
   font-weight: 300;
@@ -699,7 +702,7 @@ button {
 #footer {
   background-color: #f7f7f7;
   padding: 2em;
-  border-top: 1px solid #004e98;
+  border-top: 1px solid #006dc6;
 }
 #footer .footer-column-wrapper {
   display: flex;
