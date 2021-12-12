@@ -48,10 +48,12 @@ class EfastBlock extends Component {
       category: 'Efast',
       props: thisBlock.props,
       qtype: thisBlock.qtype,
+      qtypeReading: thisBlock.qtype.filter(el => el === 'reading').length,
       questionList: thisBlock.questions,
       optionsList: optionsToArray,
       answer: thisBlock.answers,
       explain: thisBlock.explain,
+      interpretation: thisBlock.interpretation,
       questionOptionsSet: questionOptionsSet,
       data: {
         userId: this.props.userId,
@@ -163,16 +165,18 @@ class EfastBlock extends Component {
         <div id="question-wrapper">
           {questionOptionsSet && questionOptionsSet.map((set, idx) => {
             return (
-              <div key={idx + 1} className={set.qtype === 'reading' ? 'qtype-reading' : 'qtype-general'}>
+              <div key={idx + 1}>
                 {set.qtype === 'reading' ?
+                <div className='qtype-reading'>
                   <div className="question">
                     <p>{idx + 1}. {set.question}</p>
-                    {set.option.map(((op, opidx) =>
+                    {set.option.map((op, opidx) =>
                       <div key={opidx}>
                         <input type="radio" id={`${idx}_${op}`} name={idx + 1} value={opidx + 1} onClick={this.collectChoices} />
                         <label htmlFor={`${idx}_${op}`}>{opidx + 1}. {op}</label>
                       </div>
-                    ))}
+                    )}
+
                     {this.state.showExplain && this.state.explain[idx].length > 0 ?
                       <div className="explain">
                         <p>{this.state.explain[idx]}</p>
@@ -180,25 +184,52 @@ class EfastBlock extends Component {
                       : null
                     }
                   </div>
-                  :
-                  <div className="question">
-                    <p>{idx + 1}. {set.question}</p>
-                    {set.option.map(((op, opidx) =>
-                      <div key={opidx}>
-                        <input type="radio" id={`${idx}_${op}`} name={idx + 1} value={opidx + 1} onClick={this.collectChoices} />
-                        <label htmlFor={`${idx}_${op}`}>{opidx + 1}. {op}</label>
-                      </div>
-                    ))}
-                    {this.state.showExplain && this.state.explain[idx].length > 0 ?
-                      <div className="explain">
-                        <p>{this.state.explain[idx]}</p>
-                      </div>
-                      : null
-                    }
-                  </div>
+                </div>
+                : 
+                null
                 }
               </div>
             )
+          })}
+
+          {this.state.showExplain ? 
+            <div className="readingInterpretation">
+              <p><span>Answer</span><br />{this.state.interpretation ? this.state.interpretation[0] : null}</p>
+              <p><span>Interpretation</span><br />{this.state.interpretation ? this.state.interpretation[1] : null}</p>
+              <p><span>Impression</span><br />{this.state.interpretation ? this.state.interpretation[2] : null}</p>
+            </div>
+            :
+            null
+          }
+          
+
+          {questionOptionsSet && questionOptionsSet.map((set, idx) => {
+            return (
+              <div key={idx + 1}>
+                {set.qtype === 'general' ? 
+                <div className='qtype-general'>
+                  <div className='question'>
+                    <p>{idx + 1}. {set.question}</p>
+                    {set.option.map((op, opidx) =>
+                      <div key={opidx}>
+                        <input type="radio" id={`${idx}_${op}`} name={idx + 1} value={opidx + 1} onClick={this.collectChoices} />
+                        <label htmlFor={`${idx}_${op}`}>{opidx + 1}. {op}</label>
+                      </div>
+                    )}
+
+                    {this.state.showExplain && this.state.explain[idx].length > 0 ?
+                      <div className="explain">
+                        <p>{this.state.explain[idx]}</p>
+                      </div>
+                      : null
+                    }
+                  </div>
+                </div>
+                : null
+                }
+              </div>
+            )            
+            
           }
           )}
         </div>

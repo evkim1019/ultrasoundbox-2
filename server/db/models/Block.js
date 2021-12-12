@@ -23,6 +23,9 @@ const CardioBlock = db.define('cardioblock', {
   },
   explain: {
     type: Sequelize.ARRAY(Sequelize.TEXT)
+  },
+  interpretation: {
+    type: Sequelize.ARRAY(Sequelize.TEXT)
   }
 })
 
@@ -43,6 +46,9 @@ const RenalBlock = db.define('renalblock', {
     type: Sequelize.ARRAY(Sequelize.INTEGER)
   },
   explain: {
+    type: Sequelize.ARRAY(Sequelize.TEXT)
+  },
+  interpretation: {
     type: Sequelize.ARRAY(Sequelize.TEXT)
   }
 })
@@ -65,6 +71,9 @@ const EfastBlock = db.define('efastblock', {
   },
   explain: {
     type: Sequelize.ARRAY(Sequelize.TEXT)
+  },
+  interpretation: {
+    type: Sequelize.ARRAY(Sequelize.TEXT)
   }
 })
 
@@ -85,6 +94,9 @@ const RuqBlock = db.define('ruqblock', {
     type: Sequelize.ARRAY(Sequelize.INTEGER)
   },
   explain: {
+    type: Sequelize.ARRAY(Sequelize.TEXT)
+  },
+  interpretation: {
     type: Sequelize.ARRAY(Sequelize.TEXT)
   }
 })

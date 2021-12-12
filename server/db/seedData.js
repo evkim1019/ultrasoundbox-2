@@ -57,7 +57,8 @@ const seedData = async () => {
       questions: questionList,
       options: optionsList,
       answers: answerList,
-      explain: explainList
+      explain: explainList,
+      interpretation: block.interpretation,
     })
   }
 
@@ -83,7 +84,8 @@ const seedData = async () => {
       questions: questionList,
       options: optionsList,
       answers: answerList,
-      explain: explainList
+      explain: explainList,
+      interpretation: block.interpretation,
     })
   }
 
@@ -109,7 +111,8 @@ const seedData = async () => {
       questions: questionList,
       options: optionsList,
       answers: answerList,
-      explain: explainList
+      explain: explainList,
+      interpretation: block.interpretation,
     })
   }
 
@@ -135,7 +138,8 @@ const seedData = async () => {
       questions: questionList,
       options: optionsList,
       answers: answerList,
-      explain: explainList
+      explain: explainList,
+      interpretation: block.interpretation,
     })
   }
 

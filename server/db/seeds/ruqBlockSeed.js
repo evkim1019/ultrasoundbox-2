@@ -46,6 +46,11 @@ const ruqBlockList = [
         answer: 2,
         explain: 'TTE is sensitive and specific for detecting regional wall motion abnormalities and overall ventricular function. Acute Ischemia causes stunning and eventual necrosis of the cardiac myocytes. If one specific cornary artery is occluded, then all of the myocytes it provides blood flow to undergo stunning, resulting in that region of the heart contracting less. However, resting echocardiography is not sufficiently sensitive alone to exclude cardiac ischemia, and it can be difficult to differentiate between old and new wall motion abnormalities.'
       },
+    ],
+    interpretation: [
+      'Answer',
+      'Interpretation',
+      'Impression'
     ]
   },
 
