@@ -154,7 +154,7 @@ class CardiothoracicTorso extends Component {
   render() { 
 
     const thisTorso = this.props.cardiothoracic.filter(qGroup => qGroup.id === this.props.thisBlockNum)[0]
-    console.log('thisTorsothisTorsothisTorso', thisTorso)
+    // console.log('thisTorsothisTorsothisTorso', thisTorso)
     return (
       <div id="torso-box">
         <div id="torso-wrapper">

@@ -3,7 +3,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '47yo female came in with shortness of breath, pleuritic pain and tachycardia. She takes over the counter contraceptives. Please perform a point-of-care ECHO and obtain any needed views. You perform a POCUS:',
-    usviews: ['/cardiothoracic/block1/1.gif', '/cardiothoracic/block1/2.gif', '/cardiothoracic/block1/3.gif', '/cardiothoracic/block1/4.gif', '/cardiothoracic/block1/5.gif', '/cardiothoracic/block1/6.gif', '/cardiothoracic/block1/7.gif', '/cardiothoracic/block1/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block1/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -73,7 +73,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: 'Match each letter with the correct anatomical structures',
-    usviews: ['/cardiothoracic/block2/1.gif', '/cardiothoracic/block2/2.gif', '/cardiothoracic/block2/3.gif', '/cardiothoracic/block2/4.gif', '/cardiothoracic/block2/5.gif', '/cardiothoracic/block2/6.gif', '/cardiothoracic/block2/7.gif','/cardiothoracic/block2/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/7.gif','https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block2/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -180,7 +180,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: 'Match each letter with the correct anatomical structures:',
-    usviews: ['/cardiothoracic/block3/1.gif', '/cardiothoracic/block3/2.gif', '/cardiothoracic/block3/3.gif', '/cardiothoracic/block3/4.gif', '/cardiothoracic/block3/5.gif', '/cardiothoracic/block3/6.gif', '/cardiothoracic/block3/7.gif', '/cardiothoracic/block3/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block3/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -245,7 +245,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '26yo F with hx of lupus comes in with shortness of breath. Her vital signs are as follows: T - 100.0F, HR = 135, BP = 85/40, SPO2=100%. You perform a POCUS:',
-    usviews: ['/cardiothoracic/block4/1.gif', '/cardiothoracic/block4/2.gif', '/cardiothoracic/block4/3.gif', '/cardiothoracic/block4/4.gif', '/cardiothoracic/block4/5.gif', '/cardiothoracic/block4/6.gif', '/cardiothoracic/block4/7.gif', '/cardiothoracic/block4/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block4/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -309,7 +309,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '62yo M comes in with shortness of breath. His vital signs are as follows: HR 104, BP = 190/110, SPO2=91%, t=99.9f. You perform a point-of-care ECHO and obtain the following views. You perform a POCUS:',
-    usviews: ['/cardiothoracic/block5/1.gif', '/cardiothoracic/block5/2.gif', '/cardiothoracic/block5/3.gif', '/cardiothoracic/block5/4.gif', '/cardiothoracic/block5/5.gif', '/cardiothoracic/block5/6.jpeg', '/cardiothoracic/block5/7.gif', '/cardiothoracic/block5/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/6.jpeg', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block5/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -373,7 +373,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '55yo M with a past medical history of chronic heart failure and MI, for which he recieved a drug eluting stent in the LAD, presents with a chief complaint of shortness of breath. You perform a POCUS:',
-    usviews: ['/cardiothoracic/block6/1.gif', '/cardiothoracic/block6/2.gif', '/cardiothoracic/block6/3.gif', '/cardiothoracic/block6/4.gif', '/cardiothoracic/block6/5.gif', '/cardiothoracic/block6/6.gif', '/cardiothoracic/block6/7.gif', '/cardiothoracic/block6/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block6/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -438,7 +438,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '73yo M with a history of heart failure comes in with shortness of breath. You obtain a POCUS:',
-    usviews: ['/cardiothoracic/block7/1.gif', '/cardiothoracic/block7/2.gif', '/cardiothoracic/block7/3.gif', '/cardiothoracic/block7/4.gif', '/cardiothoracic/block7/5.gif', '/cardiothoracic/block7/6.gif', '/cardiothoracic/block7/7.gif', '/cardiothoracic/block7/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block7/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -496,7 +496,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '45yo M with a history of HTN and smoking comes in with chest pain. He denies any cardiac history. You obtain a point-of-care ECHO and obtain the following views. Please obtain any needed POCUS views, create an interpretation and use that interpretation to answer the clinical questions:',
-    usviews: ['/cardiothoracic/block8/1.gif', '/cardiothoracic/block8/2.gif', '/cardiothoracic/block8/3.gif', '/cardiothoracic/block8/4.gif', '/cardiothoracic/block8/5.gif', '/cardiothoracic/block8/6.gif', '/cardiothoracic/block8/7.gif', '/cardiothoracic/block8/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block8/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -561,7 +561,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '71yo M with a history of heart failure comes in with shortness of breath. Please obtain and interpret the relevent ultrasound views:',
-    usviews: ['/cardiothoracic/block9/1.gif', '/cardiothoracic/block9/2.gif', '/cardiothoracic/block9/3.gif', '/cardiothoracic/block9/4.gif', '/cardiothoracic/block9/5.gif', '/cardiothoracic/block9/6.gif', '/cardiothoracic/block9/7.gif', '/cardiothoracic/block9/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block9/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
@@ -619,7 +619,7 @@ const cardioBlockList = [
   {
     categoryId: 1,
     props: '63yo F with a history of breast cancer comes in with shortness of breath and chest pain. You perform a POCUS:',
-    usviews: ['/cardiothoracic/block10/1.gif', '/cardiothoracic/block10/2.gif', '/cardiothoracic/block10/3.gif', '/cardiothoracic/block10/4.gif', '/cardiothoracic/block10/5.gif', '/cardiothoracic/block10/6.gif', '/cardiothoracic/block10/7.gif', '/cardiothoracic/block10/8.gif'],
+    usviews: ['https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/1.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/2.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/3.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/4.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/5.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/6.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/7.gif', 'https://ultrasoundbox.s3.amazonaws.com/cardiothoracic/block10/8.gif'],
     questionInfo: [
       {
         qtype: 'reading',
